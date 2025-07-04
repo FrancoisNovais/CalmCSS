@@ -1,0 +1,16 @@
+# Node modules (si tu utilises npm/yarn plus tard)
+node_modules/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# Temp
+*.tmp
+*.swp

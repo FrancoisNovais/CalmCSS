@@ -1,0 +1,821 @@
+@import "./variables.css";
+
+/* --------------------------------------------- 
+  CalmCSS: calm.css — Minimalist CSS base with semantic structure
+  Version : 0.5
+  Date    : 2025-07-05
+  Author  : François Novais
+
+  Description:
+  A clean, lightweight, classless CSS base designed for quick web project launches without hassle.
+  Provides a consistent and maintainable design system easily customizable via CSS variables.
+
+  License: MIT License
+  --------------------------------------------- */
+
+/* ========================================================================== 
+   CalmCSS — Base Typography and Global Styles
+   ========================================================================== */
+
+/* --------------------
+   Base typography
+   -------------------- */
+html {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Headings with modular scale */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  margin: calc(var(--spacing-unit) * 1) 0 calc(var(--spacing-unit) * 0.5);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+  margin: calc(var(--spacing-unit) * 0.8) 0 calc(var(--spacing-unit) * 0.4);
+  color: var(--color-text);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  margin: calc(var(--spacing-unit) * 0.6) 0 calc(var(--spacing-unit) * 0.3);
+  color: var(--color-text);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  font-weight: 600;
+  margin: calc(var(--spacing-unit) * 0.5) 0 calc(var(--spacing-unit) * 0.25);
+  color: var(--color-text);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+  font-weight: 500;
+  margin: calc(var(--spacing-unit) * 0.4) 0 calc(var(--spacing-unit) * 0.2);
+  color: var(--color-text);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  font-weight: 500;
+  margin: calc(var(--spacing-unit) * 0.3) 0 calc(var(--spacing-unit) * 0.15);
+  color: var(--color-text);
+}
+
+/* Paragraph */
+p {
+  margin: 0 0 calc(var(--spacing-unit) * 1);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  /* No outline here */
+}
+
+a:focus-visible {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  outline: 2px solid var(--color-link-hover);
+  outline-offset: 2px;
+}
+
+/* Code elements */
+code,
+pre {
+  font-family: var(--font-mono);
+  background-color: var(--color-surface-muted);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.9em;
+  color: var(--color-text);
+}
+
+/* Preformatted text */
+pre {
+  overflow-x: auto;
+  padding: var(--spacing-unit);
+  margin: calc(var(--spacing-unit) * 1) 0;
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+}
+
+/* Blockquote */
+blockquote {
+  margin: 0 0 calc(var(--spacing-unit) * 1);
+  padding-left: calc(var(--spacing-unit) * 1);
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-text);
+  font-style: italic;
+}
+
+/* Utility: Hide elements by attribute */
+[hidden] {
+  display: none !important;
+}
+
+/* ========================================================================== 
+   CalmCSS — Semantic Element Styling
+   ========================================================================== */
+
+section,
+article,
+aside,
+nav,
+header,
+footer {
+  max-width: min(1200px, 95vw);
+  margin: 0 auto calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 2);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+aside {
+  background-color: var(--color-light);
+  border-left: 4px solid var(--color-primary-active);
+  color: var(--color-text);
+  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------ 
+   Base button styles — CalmCSS
+------------------------------------------------------------ */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+  border-radius: 0.375rem;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  box-shadow: none;
+}
+
+/* Focus state styles */
+button:focus-visible,
+input[type="button"]:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-focus-shadow);
+}
+
+/* Hover state styles */
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-primary-text);
+}
+
+/* Active (pressed) state styles */
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+  background-color: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+  color: var(--color-primary-text);
+  box-shadow: none;
+}
+
+/* Disabled state styles */
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-light);
+  border-color: var(--color-border);
+  color: var(--color-text);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------ 
+   Button variants using [data-variant="..."] attribute
+------------------------------------------------------------ */
+
+/* Secondary variant */
+button[data-variant="secondary"],
+input[type="button"][data-variant="secondary"],
+input[type="submit"][data-variant="secondary"],
+input[type="reset"][data-variant="secondary"] {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-text);
+  border-color: transparent;
+}
+button[data-variant="secondary"]:hover,
+input[type="button"][data-variant="secondary"]:hover,
+input[type="submit"][data-variant="secondary"]:hover,
+input[type="reset"][data-variant="secondary"]:hover {
+  background-color: var(--color-secondary-hover);
+  border-color: var(--color-secondary-hover);
+}
+button[data-variant="secondary"]:active,
+input[type="button"][data-variant="secondary"]:active,
+input[type="submit"][data-variant="secondary"]:active,
+input[type="reset"][data-variant="secondary"]:active {
+  background-color: var(--color-secondary-active);
+  border-color: var(--color-secondary-active);
+}
+button[data-variant="secondary"]:focus-visible,
+input[type="button"][data-variant="secondary"]:focus-visible,
+input[type="submit"][data-variant="secondary"]:focus-visible,
+input[type="reset"][data-variant="secondary"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-secondary-focus-shadow);
+}
+
+/* Accent variant */
+button[data-variant="accent"],
+input[type="button"][data-variant="accent"],
+input[type="submit"][data-variant="accent"],
+input[type="reset"][data-variant="accent"] {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  border-color: transparent;
+}
+button[data-variant="accent"]:hover,
+input[type="button"][data-variant="accent"]:hover,
+input[type="submit"][data-variant="accent"]:hover,
+input[type="reset"][data-variant="accent"]:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+button[data-variant="accent"]:active,
+input[type="button"][data-variant="accent"]:active,
+input[type="submit"][data-variant="accent"]:active,
+input[type="reset"][data-variant="accent"]:active {
+  background-color: var(--color-accent-active);
+  border-color: var(--color-accent-active);
+}
+button[data-variant="accent"]:focus-visible,
+input[type="button"][data-variant="accent"]:focus-visible,
+input[type="submit"][data-variant="accent"]:focus-visible,
+input[type="reset"][data-variant="accent"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-accent-focus-shadow);
+}
+
+/* Success variant */
+button[data-variant="success"] {
+  background-color: var(--color-success);
+  color: var(--color-success-text);
+  border-color: transparent;
+}
+button[data-variant="success"]:hover {
+  background-color: var(--color-success-hover);
+  border-color: var(--color-success-hover);
+}
+button[data-variant="success"]:active {
+  background-color: var(--color-success-active);
+  border-color: var(--color-success-active);
+}
+button[data-variant="success"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-success-focus-shadow);
+}
+
+/* Warning variant */
+button[data-variant="warning"] {
+  background-color: var(--color-warning);
+  color: var(--color-warning-text);
+  border-color: transparent;
+}
+button[data-variant="warning"]:hover {
+  background-color: var(--color-warning-hover);
+  border-color: var(--color-warning-hover);
+}
+button[data-variant="warning"]:active {
+  background-color: var(--color-warning-active);
+  border-color: var(--color-warning-active);
+}
+button[data-variant="warning"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-warning-focus-shadow);
+}
+
+/* Danger variant */
+button[data-variant="danger"] {
+  background-color: var(--color-danger);
+  color: var(--color-danger-text);
+  border-color: transparent;
+}
+button[data-variant="danger"]:hover {
+  background-color: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+}
+button[data-variant="danger"]:active {
+  background-color: var(--color-danger-active);
+  border-color: var(--color-danger-active);
+}
+button[data-variant="danger"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-danger-focus-shadow);
+}
+
+/* Info variant */
+button[data-variant="info"] {
+  background-color: var(--color-info);
+  color: var(--color-info-text);
+  border-color: transparent;
+}
+button[data-variant="info"]:hover {
+  background-color: var(--color-info-hover);
+  border-color: var(--color-info-hover);
+}
+button[data-variant="info"]:active {
+  background-color: var(--color-info-active);
+  border-color: var(--color-info-active);
+}
+button[data-variant="info"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-info-focus-shadow);
+}
+
+/* ========================================================================== 
+   CalmCSS — Forms and Inputs
+   ========================================================================== */
+
+/* -------------------- 
+   Base styles for form element
+   -------------------- */
+form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* -------------------- 
+   Label styling
+   -------------------- */
+label {
+  display: inline-block;
+  margin-bottom: calc(var(--spacing-unit) * 0.25);
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* -------------------- 
+   Base styles for input, textarea, and select elements
+   -------------------- */
+input,
+textarea,
+select {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: 0.375rem;
+  padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.75);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+  outline-offset: 2px;
+}
+
+/* -------------------- 
+   Focus state styles for inputs, textarea, and select
+   -------------------- */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-focus-shadow);
+  outline: none;
+}
+
+/* -------------------- 
+   Placeholder text styling
+   -------------------- */
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* -------------------- 
+   Disabled state styles for inputs, textarea, and select
+   -------------------- */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: var(--color-surface-muted);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* -------------------- 
+   Textarea specific styles
+   -------------------- */
+textarea {
+  min-height: 6rem;
+  line-height: 1.4;
+}
+
+/* -------------------- 
+   Select specific styles (custom arrow, padding, cursor)
+   -------------------- */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23666' height='10' viewBox='0 0 24 24' width='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: calc(var(--spacing-unit) * 2);
+  cursor: pointer;
+}
+
+/* -------------------- 
+   Checkbox and radio input styling (size and spacing)
+   -------------------- */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  height: auto;
+  margin-right: calc(var(--spacing-unit) * 0.5);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* -------------------- 
+   Fieldset and legend styling (borders, padding, font weight)
+   -------------------- */
+fieldset {
+  border: 1px solid var(--color-border);
+  padding: calc(var(--spacing-unit) * 1);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  border-radius: 0.375rem;
+}
+
+legend {
+  font-weight: 700;
+  padding: 0 calc(var(--spacing-unit) * 0.5);
+  color: var(--color-text);
+}
+
+/* -------------------- 
+   Basic validation styles for invalid inputs, textarea, and select
+   -------------------- */
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px var(--color-danger-focus-shadow);
+}
+
+/* ========================================================================== 
+   CalmCSS — Lists
+   ========================================================================== */
+
+/* Unordered lists (ul) */
+ul {
+  list-style-type: disc; /* Classic bullets */
+  margin: calc(var(--spacing-unit) * 1) 0;
+  padding-left: calc(var(--spacing-unit) * 2); /* Indent bullets */
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+}
+
+/* Ordered lists (ol) */
+ol {
+  list-style-type: decimal; /* Numbers */
+  margin: calc(var(--spacing-unit) * 1) 0;
+  padding-left: calc(var(--spacing-unit) * 2);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+}
+
+/* List items */
+li {
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+/* Last list item — no bottom margin */
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested sub-lists with indentation */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: calc(var(--spacing-unit) * 2);
+  color: var(--color-text-muted);
+  font-size: 0.9em;
+}
+
+/* Definition lists (dl, dt, dd) */
+dl {
+  margin: calc(var(--spacing-unit) * 1) 0;
+  color: var(--color-text);
+}
+
+dt {
+  font-weight: 600;
+  margin-top: calc(var(--spacing-unit) * 1);
+  margin-bottom: calc(var(--spacing-unit) * 0.25);
+}
+
+dd {
+  margin-left: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 0.75);
+  color: var(--color-text-muted);
+}
+
+/* ========================================================================== 
+   CalmCSS — Tables
+   ========================================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: calc(var(--spacing-unit) * 1) 0;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+caption {
+  caption-side: bottom;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  padding-top: calc(var(--spacing-unit) * 0.5);
+  text-align: center;
+}
+
+thead {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  text-align: left;
+  user-select: none;
+}
+
+thead th {
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1);
+  border-bottom: 2px solid var(--color-primary-dark);
+  font-weight: 600;
+}
+
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: var(--color-light);
+}
+
+tbody td {
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+tfoot {
+  background-color: var(--color-light);
+  border-top: 2px solid var(--color-primary-dark);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+tfoot td {
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1);
+}
+
+tbody th {
+  font-weight: 600;
+  background-color: var(--color-surface-muted);
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+/* ========================================================================== 
+   CalmCSS — Modals
+   ========================================================================== */
+
+dialog {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+dialog[open] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================================================================== 
+   CalmCSS — Alerts
+   ========================================================================== */
+
+[role="alert"] {
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1);
+  margin: calc(var(--spacing-unit) * 0.5) 0;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  border: 2px solid transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+[role="alert"][data-alert-type="danger"] {
+  background-color: var(--color-danger);
+  color: var(--color-text);
+  border-color: var(--color-danger-text);
+}
+
+[role="alert"][data-alert-type="warning"] {
+  background-color: var(--color-warning);
+  color: var(--color-text);
+  border-color: var(--color-warning-text);
+}
+
+[role="alert"][data-alert-type="success"] {
+  background-color: var(--color-success);
+  color: var(--color-text);
+  border-color: var(--color-success-text);
+}
+
+[role="alert"][data-alert-type="info"] {
+  background-color: var(--color-info);
+  color: var(--color-text);
+  border-color: var(--color-info-text);
+}
+
+/* Icon before alert text */
+[role="alert"]::before {
+  flex-shrink: 0;
+  font-size: 1.25em;
+  /* margin-right added by gap on parent */
+}
+
+[role="alert"][data-alert-type="danger"]::before {
+  content: "⚠️"; /* Danger icon */
+}
+
+[role="alert"][data-alert-type="warning"]::before {
+  content: "⚠"; /* Warning icon */
+}
+
+[role="alert"][data-alert-type="success"]::before {
+  content: "✅"; /* Success icon */
+}
+
+[role="alert"][data-alert-type="info"]::before {
+  content: "ℹ️"; /* Info icon */
+}
+
+/* ==========================================================================  
+   CalmCSS — Images and Media (no alignment classes)
+   ========================================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+}
+
+img[data-align="left"] {
+  float: left;
+  margin: 0 calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1) 0;
+}
+
+img[data-align="right"] {
+  float: right;
+  margin: 0 0 calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 1);
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 0 0 calc(var(--spacing-unit) * 1);
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: var(--color-text-muted);
+  margin-top: calc(var(--spacing-unit) * 0.25);
+}
+
+svg {
+  vertical-align: middle;
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Automatic clearfix without a class, via targeted containers */
+section[aria-label],
+article,
+main,
+div.content {
+  overflow: hidden;
+  /* Optionally add padding/margin at the bottom if needed */
+  padding-bottom: var(--spacing-unit, 1rem);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+  th,
+  td {
+    border-color: var(--color-border);
+  }
+
+  tbody tr:hover {
+    background-color: var(--color-dark-hover);
+    color: var(--color-light-text);
+  }
+
+  tfoot {
+    background-color: var(--color-dark-active);
+    color: var(--color-light-text);
+  }
+
+  [role="alert"][data-alert-type="danger"],
+  [role="alert"][data-alert-type="warning"],
+  [role="alert"][data-alert-type="success"] {
+    color: #000;
+  }
+}

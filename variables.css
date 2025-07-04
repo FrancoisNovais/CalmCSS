@@ -1,0 +1,255 @@
+/* --------------------------------------------- 
+  CalmCSS: variables.css — Minimalist CSS base with semantic structure
+  Version : 0.4
+  Date    : 2025-07-04
+  Author  : François Novais
+
+  Description:
+  A clean, lightweight, classless CSS base, ready to use for quickly launching a web project without hassle.
+  Enables a consistent, maintainable design that can be quickly adjusted via CSS variables.
+
+  License: MIT License
+  --------------------------------------------- */
+
+/* ==========================================================================
+   CalmCSS— CSS Variables (Typography + Extended Color Palette)
+   ========================================================================== */
+
+:root {
+  /* FONTS
+   Define default font stacks for body and monospace text.
+*/
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+
+  /* TYPOGRAPHY SCALE
+   Define base font size and line height for consistent vertical rhythm.
+*/
+  --font-size-base: 1rem;
+  --line-height-base: 1.5;
+
+  /* SPACING SYSTEM
+   Base unit for margin, padding, gap, etc.
+*/
+  --spacing-unit: 1rem;
+
+  /* MODULAR SCALE
+   Generate heading sizes using a consistent scale ratio.
+*/
+  --scale-ratio: 1.25;
+  --font-size-h6: calc(var(--font-size-base) / var(--scale-ratio));
+  --font-size-h5: var(--font-size-base);
+  --font-size-h4: calc(var(--font-size-h5) * var(--scale-ratio));
+  --font-size-h3: calc(var(--font-size-h4) * var(--scale-ratio));
+  --font-size-h2: calc(var(--font-size-h3) * var(--scale-ratio));
+  --font-size-h1: calc(var(--font-size-h2) * var(--scale-ratio));
+
+  /* COLOR - PRIMARY
+   Main brand color and interaction states (hover, active, focus).
+*/
+  --color-primary: #1e62ab;
+  --color-primary-hover: #174b81;
+  --color-primary-active: #123a61;
+  --color-primary-focus-shadow: rgba(30, 98, 171, 0.4);
+  --color-primary-text: #ffffff;
+
+  /* COLOR - SECONDARY
+   Secondary support color, usually used to complement primary.
+*/
+  --color-secondary: #64748b;
+  --color-secondary-hover: #475569;
+  --color-secondary-active: #364152;
+  --color-secondary-focus-shadow: rgba(100, 116, 139, 0.4);
+  --color-secondary-text: #ffffff;
+
+  /* COLOR - ACCENT
+   Highlight or accent color for key elements (e.g. buttons, tags).
+*/
+  --color-accent: #ec4899;
+  --color-accent-hover: #b91c66;
+  --color-accent-active: #881547;
+  --color-accent-focus-shadow: rgba(236, 72, 153, 0.4);
+  --color-accent-text: #ffffff;
+
+  /* COLOR - SUCCESS
+   Indicates successful or positive actions/messages.
+*/
+  --color-success: #22c55e;
+  --color-success-hover: #16a34a;
+  --color-success-active: #0e7b34;
+  --color-success-focus-shadow: rgba(34, 197, 94, 0.4);
+  --color-success-text: #ffffff;
+
+  /* COLOR - WARNING
+   Used for alerts or actions that require attention but aren't errors.
+*/
+  --color-warning: #facc15;
+  --color-warning-hover: #b28704;
+  --color-warning-active: #705a02;
+  --color-warning-focus-shadow: rgba(250, 204, 21, 0.4);
+  --color-warning-text: #000000;
+
+  /* COLOR - DANGER
+   Represents errors or destructive actions.
+*/
+  --color-danger: #ef4444;
+  --color-danger-hover: #b91c1c;
+  --color-danger-active: #7f1414;
+  --color-danger-focus-shadow: rgba(239, 68, 68, 0.4);
+  --color-danger-text: #ffffff;
+
+  /* COLOR - INFO
+   Used for informational messages or highlights.
+*/
+  --color-info: #06b6d4;
+  --color-info-hover: #0a6577;
+  --color-info-active: #08494f;
+  --color-info-focus-shadow: rgba(6, 182, 212, 0.4);
+  --color-info-text: #ffffff;
+
+  /* COLOR - LIGHT & DARK
+   Background utility colors for light/dark surfaces and texts.
+*/
+  --color-light: #f3f4f6;
+  --color-light-hover: #d1d5db;
+  --color-light-active: #a9adb1;
+  --color-light-focus-shadow: rgba(243, 244, 246, 0.6);
+  --color-light-text: #f9fafb;
+
+  --color-dark: #1f2937;
+  --color-dark-hover: #111827;
+  --color-dark-active: #0b0f13;
+  --color-dark-focus-shadow: rgba(31, 41, 55, 0.6);
+  --color-text: #1f2937;
+
+  /* SURFACES
+   Background and border colors for cards, panels, and UI sections.
+*/
+  --color-surface: #f9fafb;
+  --color-surface-muted: #e5e7eb;
+  --color-border: #d1d5db;
+
+  /* TEXT - MUTED
+   Used for secondary, disabled or less prominent text.
+*/
+  --color-text-muted: #6b7280;
+
+  /* LINKS
+   Styling for links and their hover states.
+*/
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-active);
+
+  /* BASE COLORS
+   Default text and background colors for the whole page.
+*/
+  --color-text: #1f2937;
+  --color-background: #ffffff;
+}
+
+/* ==========================================================================
+   Dark Mode: Override CSS Variables for Dark Color Scheme
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* GENERAL BACKGROUND & TEXT COLORS
+       Define the base background and text colors for dark mode.
+    */
+    --color-background: #121212;
+    --color-text: #e0e0e0;
+    --color-text-muted: #999999;
+
+    /* PRIMARY COLORS
+       Primary brand colors adapted for dark backgrounds.
+    */
+    --color-primary: #58a6ff;
+    --color-primary-hover: #8ecbff;
+    --color-primary-active: #1f6feb;
+    --color-primary-focus-shadow: rgba(88, 166, 255, 0.4);
+    --color-primary-text: #000000;
+
+    /* SECONDARY COLORS
+       Secondary support colors for dark mode.
+    */
+    --color-secondary: #adb5bd;
+    --color-secondary-hover: #ced4da;
+    --color-secondary-active: #6c757d;
+    --color-secondary-focus-shadow: rgba(173, 181, 189, 0.4);
+    --color-secondary-text: #000000;
+
+    /* ACCENT COLORS
+       Highlight colors for key UI elements.
+    */
+    --color-accent: #ff6eb4;
+    --color-accent-hover: #ff8ecf;
+    --color-accent-active: #e6559c;
+    --color-accent-focus-shadow: rgba(255, 110, 180, 0.4);
+    --color-accent-text: #000000;
+
+    /* SUCCESS COLORS
+       Positive feedback colors.
+    */
+    --color-success: #71dd8a;
+    --color-success-hover: #9beeab;
+    --color-success-active: #4ec563;
+    --color-success-focus-shadow: rgba(113, 221, 138, 0.4);
+    --color-success-text: #000000;
+
+    /* WARNING COLORS
+       Colors used for warnings or alerts.
+    */
+    --color-warning: #ffe97f;
+    --color-warning-hover: #fff3b1;
+    --color-warning-active: #e6d766;
+    --color-warning-focus-shadow: rgba(255, 233, 127, 0.4);
+    --color-warning-text: #000000;
+
+    /* DANGER COLORS
+       Error or destructive action colors.
+    */
+    --color-danger: #ff6f7d;
+    --color-danger-hover: #ff8b93;
+    --color-danger-active: #e6525a;
+    --color-danger-focus-shadow: rgba(255, 111, 125, 0.4);
+    --color-danger-text: #000000;
+
+    /* INFO COLORS
+       Informational message colors.
+    */
+    --color-info: #6edff6;
+    --color-info-hover: #9ae7fb;
+    --color-info-active: #42b6d7;
+    --color-info-focus-shadow: rgba(110, 223, 246, 0.4);
+    --color-info-text: #000000;
+
+    /* DARK & LIGHT UTILITY COLORS
+       Dark and light shades used as surfaces or backgrounds.
+    */
+    --color-dark: #1f2937;
+    --color-dark-hover: #111827;
+    --color-dark-active: #0b0f13;
+    --color-dark-focus-shadow: rgba(31, 41, 55, 0.6);
+    --color-dark-text: #ffffff;
+
+    --color-light: #2a2a2a;
+    --color-light-hover: #3a3a3a;
+    --color-light-active: #444444;
+    --color-light-focus-shadow: rgba(58, 58, 58, 0.6);
+    --color-light-text: #ffffff;
+
+    /* SURFACES & BORDERS
+       Backgrounds and borders for panels and UI sections.
+    */
+    --color-surface: #1e1e1e;
+    --color-surface-muted: #2c2c2c;
+    --color-border: #333333;
+
+    /* LINKS
+       Link colors and hover states.
+    */
+    --color-link: var(--color-primary);
+    --color-link-hover: var(--color-primary-active);
+  }
+}
