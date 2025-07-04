@@ -2,7 +2,7 @@
 
 /* --------------------------------------------- 
   CalmCSS: calm.css — Minimalist CSS base with semantic structure
-  Version : 0.5
+  Version : 0.5.1
   Date    : 2025-07-05
   Author  : François Novais
 
@@ -16,6 +16,23 @@
 /* ========================================================================== 
    CalmCSS — Base Typography and Global Styles
    ========================================================================== */
+
+/* --------------------
+   Minimal reset
+   -------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: inherit;
+}
 
 /* --------------------
    Base typography
@@ -154,11 +171,16 @@ aside,
 nav,
 header,
 footer {
-  max-width: min(1200px, 95vw);
-  margin: 0 auto calc(var(--spacing-unit) * 2);
   padding: calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 2);
   background-color: var(--color-surface);
   color: var(--color-text);
+}
+header,
+main,
+footer {
+  border-bottom: 1px solid var(--color-dark);
+  max-width: min(1200px, 95vw);
+  margin: 0 auto;
 }
 
 aside {
@@ -512,6 +534,21 @@ select:invalid {
   box-shadow: 0 0 0 3px var(--color-danger-focus-shadow);
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--color-primary);
+  margin-left: calc(var(--spacing-unit) * 0.5);
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
 /* ========================================================================== 
    CalmCSS — Lists
    ========================================================================== */
@@ -788,7 +825,6 @@ svg {
 /* Automatic clearfix without a class, via targeted containers */
 section[aria-label],
 article,
-main,
 div.content {
   overflow: hidden;
   /* Optionally add padding/margin at the bottom if needed */
