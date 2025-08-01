@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalmCSS – Minimal, Class-Free CSS Base</title>
+    <link rel="stylesheet" href="calm.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CalmCSS – Clean and natural CSS base for your projects</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#media">Media</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="introduction">
+        <h2>Introduction to CalmCSS</h2>
+        <p>
+          Welcome to CalmCSS, a minimalist, class-free CSS base designed to help
+          you easily create clean and accessible websites. This simple
+          stylesheet leverages native HTML5 elements and CSS variables,
+          providing a solid foundation without any extra classes or frameworks.
+        </p>
+        <p>
+          Below you’ll find examples of common HTML elements styled with CalmCSS
+          to give you a clear starting point for your projects.
+        </p>
+        <p>
+          As with any project, perfection is hard to achieve. That’s why we
+          offer a simple class along with a short JavaScript snippet to create a
+          mobile-friendly dropdown menu, while keeping the core CSS clean and
+          free of classes or unnecessary complexity.
+        </p>
+      </section>
+
+      <section id="typography">
+        <h2>Typography</h2>
+
+        <h1>Heading H1 - Largest</h1>
+        <h2>Heading H2 - Second Level</h2>
+        <h3>Heading H3 - Third Level</h3>
+        <h4>Heading H4 - Fourth Level</h4>
+        <h5>Heading H5 - Fifth Level</h5>
+        <h6>Heading H6 - Smallest</h6>
+
+        <p>
+          This is a normal paragraph with some text. It contains
+          <strong>bold words</strong>, <em>italic text</em>, and even a
+          <a href="#">link to another page</a>. The paragraph respects the
+          maximum width for optimal readability.
+        </p>
+
+        <p>
+          <small>
+            This is smaller text, useful for notes and secondary information.
+          </small>
+        </p>
+
+        <blockquote>
+          This is a blockquote. It is highlighted with a blue border on the left
+          and a slightly different background. Perfect for testimonials or
+          important quotes.
+        </blockquote>
+
+        <ul>
+          <li>First unordered list item</li>
+          <li>Second item with <strong>bold text</strong></li>
+          <li>
+            Third item
+            <ul>
+              <li>Nested sub-item</li>
+              <li>Another sub-item</li>
+            </ul>
+          </li>
+          <li>Last item</li>
+        </ul>
+
+        <ol>
+          <li>First ordered list item</li>
+          <li>Second item</li>
+          <li>
+            Third item with sublist
+            <ol>
+              <li>Numbered sub-item</li>
+              <li>Another numbered sub-item</li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+
+      <section id="forms">
+        <h2>Forms</h2>
+
+        <form>
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+            />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+            />
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="18" max="120" />
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="">Select a country</option>
+              <option value="fr">France</option>
+              <option value="be">Belgium</option>
+              <option value="ch">Switzerland</option>
+              <option value="ca">Canada</option>
+            </select>
+
+            <label for="bio">Biography</label>
+            <textarea
+              id="bio"
+              name="bio"
+              rows="4"
+              placeholder="Tell us about yourself..."
+            ></textarea>
+
+            <label>
+              <input type="checkbox" name="newsletter" />
+              I want to receive the newsletter
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="male" />
+              Male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="female" />
+              Female
+            </label>
+            <label>
+              <input type="radio" name="gender" value="other" />
+              Other
+            </label>
+          </fieldset>
+
+          <button type="submit">Submit Form</button>
+          <button type="reset">Reset</button>
+          <button type="button" disabled>Disabled Button</button>
+        </form>
+      </section>
+
+      <section id="tables">
+        <h2>Tables</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Profession</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Marie Dupont</td>
+              <td>28</td>
+              <td>Paris</td>
+              <td>Developer</td>
+            </tr>
+            <tr>
+              <td>Jean Martin</td>
+              <td>35</td>
+              <td>Lyon</td>
+              <td>Designer</td>
+            </tr>
+            <tr>
+              <td>Sophie Bernard</td>
+              <td>42</td>
+              <td>Marseille</td>
+              <td>Project Manager</td>
+            </tr>
+            <tr>
+              <td>Pierre Moreau</td>
+              <td>31</td>
+              <td>Toulouse</td>
+              <td>Consultant</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="code">
+        <h2>Code and Technical</h2>
+
+        <p>
+          Here is an example of inline code:
+          <code>const message = "Hello World";</code>
+        </p>
+
+        <pre><code>// JavaScript example code
+function greetUser(name) {
+    if (!name) {
+        throw new Error('Name is required');
+    }
+    
+    return `Hello ${name}!`;
+}
+
+// Usage
+const userName = "Marie";
+console.log(greetUser(userName));</code></pre>
+
+        <p>Another example with HTML:</p>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </section>
+
+      <section id="media">
+        <h2>Media and Content</h2>
+
+        <figure>
+          <img
+            src="https://picsum.photos/600/300?random=1"
+            alt="Sample demonstration image"
+          />
+          <figcaption>
+            Image caption - A beautiful demonstration photo
+          </figcaption>
+        </figure>
+
+        <details>
+          <summary>Click to see more details</summary>
+          <p>
+            This is hidden content that appears when clicking the summary. Very
+            useful to create collapsible sections without JavaScript.
+          </p>
+          <p>You can put any content here, including other HTML elements.</p>
+        </details>
+
+        <details>
+          <summary>Another collapsible section</summary>
+          <p>Here is another section with different content.</p>
+          <ul>
+            <li>First point</li>
+            <li>Second point</li>
+            <li>Third point</li>
+          </ul>
+        </details>
+
+        <hr />
+
+        <p>The horizontal rule above visually separates sections.</p>
+      </section>
+    </main>
+    <aside>
+      <h3>Additional Information</h3>
+      <p>
+        This sidebar contains extra information. It can be used for notes,
+        related links, or any other secondary content.
+      </p>
+
+      <h4>Useful Links</h4>
+      <ul>
+        <li><a href="#">HTML5 Documentation</a></li>
+        <li><a href="#">CSS Guide</a></li>
+        <li><a href="#">Best Practices</a></li>
+      </ul>
+    </aside>
+    <footer>
+      <p>
+        <small>&copy; 2025 - CSS Starter Test. All rights reserved.</small>
+      </p>
+      <p>
+        <small>
+          This page highlights the class-free CalmCSS starter, leveraging only
+          HTML5 semantic elements.
+        </small>
+      </p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.querySelector("nav");
+        nav.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            nav.classList.toggle("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
