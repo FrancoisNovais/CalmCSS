@@ -1,3 +1,5 @@
+This README is in English. [Read in French](README.fr.md)
+
 # CalmCSS
 
 **CalmCSS** is a minimalist, class-free, and accessible CSS base designed to help you quickly start clear and natural web projects. This stylesheet relies solely on semantic HTML5 elements and modern CSS variables to provide a solid foundation without any class or framework overhead.
@@ -10,7 +12,7 @@
 - **CSS Variables**: Configurable colors, typography, spacing, and transitions.
 - **Automatic Dark Mode**: Adapts to user’s system preferences.
 - **Accessible Design**: Readable fonts, well-considered contrasts, responsive.
-- **Responsive**: Simple mobile-friendly dropdown menu with minimal setup.
+- **Responsive**: Simple mobile-friendly dropdown menu using native `<details>` and `<summary>`.
 - **Modular Structure**: Separate files for base styles and layout components.
 - **Versatile**: Suitable for small projects, prototypes, or as a base for full websites.
 
@@ -60,27 +62,40 @@ Minimal example:
 
 ---
 
-## Mobile Dropdown Menu (optional)
+## Mobile Dropdown Menu
 
-Because perfection is hard to reach, CalmCSS includes a simple `.open` class and a small JavaScript snippet to enable a mobile-friendly dropdown menu without complicating the base CSS.
+CalmCSS now includes a **pure CSS mobile dropdown menu** using `<details>` and `<summary>`. No JavaScript is required.
 
-> Note: This feature is **enabled by default** in the included layout CSS file (`layout-center-container.css`).  
-> You just need to add the JavaScript snippet into your HTML.
+Example:
 
 ```html
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.querySelector("nav");
-    nav.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
-        nav.classList.toggle("open");
-      }
-    });
-  });
-</script>
+<nav>
+  <ul>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#forms">Forms</a></li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#media">Media</a></li>
+  </ul>
+
+  <!-- Mobile navigation -->
+  <details>
+    <summary>Menu</summary>
+    <ul>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#tables">Tables</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#media">Media</a></li>
+    </ul>
+  </details>
+</nav>
 ```
 
-This snippet toggles the `.open` class on the `<nav>` element when clicked on screens 768px wide or less, enabling a simple toggle menu.
+Responsive behavior is automatic via media queries:
+
+* Desktop: horizontal nav is displayed.
+* Mobile (≤768px): desktop nav is hidden, and `<details>` menu is shown.
 
 ---
 
