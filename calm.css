@@ -86,6 +86,10 @@
   --transition-base: 0.2s ease-in-out;
   --transition-slow: 0.4s ease-in-out;
 
+  /* 📱 breakpoints  */
+  --breakpoint-mobile: 48rem;  /* 768px */
+  --breakpoint-desktop: 84rem; /* 1344px */
+
   /* accent color system */
   accent-color: var(--color-primary);
 }
@@ -422,27 +426,6 @@ details[open] summary {
     margin: 0 var(--spacing-md);
   }
 }
-@media (max-width: 40rem) {
-  nav {
-    position: relative;
-  }
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-  nav::before {
-    content: "☰ Menu";
-    display: block;
-    cursor: pointer;
-  }
-  nav.open ul {
-    display: flex;
-  }
-  nav.open::before {
-    content: "▲ Fermer";
-  }
-}
 
 /* ============================================================================
    🖨️ print styles
@@ -464,6 +447,7 @@ details[open] summary {
     display: none !important;
   }
 }
+
 /* ============================================================================
    🖨️ high contrast mode
    ============================================================================ */

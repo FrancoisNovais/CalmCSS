@@ -94,7 +94,7 @@ Exemple :
 Le comportement adaptatif est automatique via les media queries :
 
 * Desktop : navigation horizontale affichée.
-* Mobile (≤768px) : navigation desktop masquée, menu `<details>` affiché.
+* Mobile (≤48rem) : navigation desktop masquée, menu `<details>` affiché.
 
 ---
 

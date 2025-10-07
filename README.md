@@ -95,7 +95,7 @@ Example:
 Responsive behavior is automatic via media queries:
 
 * Desktop: horizontal nav is displayed.
-* Mobile (≤768px): desktop nav is hidden, and `<details>` menu is shown.
+* Mobile (≤48rem): desktop nav is hidden, and `<details>` menu is shown.
 
 ---
 
