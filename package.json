@@ -1,0 +1,23 @@
+{
+  "name": "calmcss",
+  "version": "0.1.0",
+  "description": "A minimalist, class-free, and accessible CSS base for modern web projects",
+  "main": "css/calm.css",
+  "style": "css/calm.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancoisNovais/CalmCSS.git"
+  },
+  "keywords": [
+    "css",
+    "classless",
+    "minimal",
+    "framework",
+    "stylesheet",
+    "accessible",
+    "dark-mode",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
