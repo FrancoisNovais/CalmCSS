@@ -28,8 +28,10 @@ Simply download the `calm.css` file and link it in your HTML project :
 
 A centered layout with maximum width is **included by default** in CalmCSS via :
 
-```css
-@import "layout-center-container.css";
+```html
+  <style>
+    @import url("../css/layouts/layout-center-container.css");
+  </style>
 ```
 
 So no additional setup is required.

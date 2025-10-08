@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+sandbox/
 package-lock.json
 yarn.lock
 

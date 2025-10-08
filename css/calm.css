@@ -3,12 +3,7 @@
 /* ============================================================================
    CalmCSS - a lightweight, classless CSS base
    ready to use with CSS variables and automatic dark mode
-
-   layout utilities - alternatives
-   import here the alternative layout of your choice
    ============================================================================ */
-
-@import "./layouts/layout-center-container.css";
 
 /* ============================================================================
    🌱 design system — css variables
